@@ -1,0 +1,114 @@
+* {
+    margin: 0%;
+}
+
+.parent {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.loginPageimg {
+    width: 55%;
+    height: 100%;
+}
+
+.loginPageform {
+    width: 45%;
+    height: 100%;
+    display: inline-block;
+}
+
+.loginPageimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+
+
+
+.bankName {
+    width: 100%;
+    height: 10%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.userlogin {
+    width: 100%;
+    height: 90%;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bankName p {
+    font-family: cursive;
+    font-size: xx-large;
+    margin-left: 30px;
+}
+
+.loginBox {
+    width: 60%;
+    height: 70%;
+    background-color: floralwhite;
+    border-radius: 10%;
+    flex-direction: column;
+    box-shadow: 20px 20px 50px rgb(230, 227, 227);
+}
+
+.loginHead {
+    font-family: cursive;
+    font-size: x-large;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-field {
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 30px rgb(230, 227, 227);
+    margin-top: 20px;
+    border-width: 0px;
+}
+
+.login-button {
+    width: 80%;
+    height: 30px;
+    margin: 20px;
+}
+
+@media all and (max-width: 479px) {
+    .loginPageimg {
+        display: none;
+    }
+
+    .loginPageform {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .loginBox {
+        width: 80%;
+        height: 60%;
+        background-color: aquamarine;
+        border-radius: 10%;
+    }
+}
