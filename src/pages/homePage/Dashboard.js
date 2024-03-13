@@ -13,7 +13,9 @@ import Home from './Home';
 
 const Dashboard = () => {
     const [userDetails, setuserDetails] = useState([]);
+    const [userBeif, setuserBeif] = useState([]);
     const [navSelect, setnavSelect] = useState(0);
+    const [selectedUser, setSelectedUser] = useState({})
     const navigate = useNavigate();
     useEffect(() => {
         axios.get('http://localhost:5000/user/getDetails', {
@@ -22,9 +24,18 @@ const Dashboard = () => {
             if (res.data.status == "400") {
                 navigate("/login");
             }
-            setuserDetails(res.data.userDetails);
+            setuserDetails(res.data.accountDetails);
+            console.log(userDetails);
+            axios.get('http://localhost:5000/benificiary/getBenificiary', { withCredentials: true })
+                .then(result => {
+                    console.log(result);
+                    setuserBeif(result.data.list.list);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
         })
-    },)
+    }, [])
 
     function logout() {
         console.log("Logout function");
@@ -45,7 +56,7 @@ const Dashboard = () => {
                         <Home />
                     )}
                     {navSelect == 1 && (
-                        <MakePayment />
+                        <MakePayment setSelectedUser={setSelectedUser} userBeif={userBeif} />
                     )}
                     {navSelect == 2 && (
                         <AddBenificiary />

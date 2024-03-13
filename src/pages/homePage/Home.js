@@ -18,7 +18,6 @@ const Home = () => {
                     <p>123</p>
                 </div>
             </div>
-
         </div>
     )
 }
