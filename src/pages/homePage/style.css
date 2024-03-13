@@ -1,10 +1,28 @@
+.dashboard-logout-home {
+    width: 210px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
 .dashboard-logout {
     width: 100px;
     height: 50px;
-    margin-right: 20px;
     border-radius: 20px;
     background-color: red;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.dashboard-home {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: darkgray;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 10px;
 }
 
 .dashboard-body {
@@ -19,12 +37,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
 }
 
 .dashboard-content {
     width: 75%;
     height: 100%;
-    background-color: bisque;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashboard-option-content {
@@ -46,4 +69,46 @@
 .option-image-style {
     border-radius: 100%;
     width: 50px;
+}
+
+.profile {
+    height: 200px;
+}
+
+.Home-box {
+    width: 95%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 10px;
+    border-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accountdetails {
+    width: 95%;
+    height: 20%;
+    margin-top: 30px;
+    background-color: aqua;
+    display: flex;
+    align-content: center;
+}
+
+.accountdetail-head {
+    width: 100%;
+    height: 10%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(255, 180, 40);
+    display: flex;
+    align-items: center;
+}
+
+.accountdetails-content {
+    height: 50%;
+    margin: auto;
+    margin-left: auto;
+    margin-left: 5px;
 }

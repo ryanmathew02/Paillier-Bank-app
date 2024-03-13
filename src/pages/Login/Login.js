@@ -47,7 +47,7 @@ const Login = () => {
             <div className="loginHead"> Account Login</div>
             <div className="loginDetails">
               <input value={accountID} className="input-field" placeholder='Account ID' onChange={(e) => setaccountID(e.target.value)} />
-              <input value={loginPassword} className="input-field" placeholder='Login Password' onChange={(e) => setloginPassword(e.target.value)} />
+              <input type='password' value={loginPassword} className="input-field" placeholder='Login Password' onChange={(e) => setloginPassword(e.target.value)} />
               <button className='login-button' onClick={userlogin}>Login</button>
               <Link to="/register">New Registration</Link>
             </div>
