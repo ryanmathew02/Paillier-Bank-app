@@ -7,14 +7,16 @@ import MakePayment from './MakePayment';
 import AddBenificiary from './AddBenificiary';
 import History from './History';
 import Home from './Home';
+import PayPortal from './PayPortal';
 
 
 
 
 const Dashboard = () => {
-    const [userDetails, setuserDetails] = useState([]);
+    const [userDetails, setuserDetails] = useState();
     const [userBeif, setuserBeif] = useState([]);
     const [navSelect, setnavSelect] = useState(0);
+    const [refresh, setrefresh] = useState(true);
     const [selectedUser, setSelectedUser] = useState({})
     const navigate = useNavigate();
     useEffect(() => {
@@ -24,6 +26,7 @@ const Dashboard = () => {
             if (res.data.status == "400") {
                 navigate("/login");
             }
+            console.log(res.data.accountDetails);
             setuserDetails(res.data.accountDetails);
             console.log(userDetails);
             axios.get('http://localhost:5000/benificiary/getBenificiary', { withCredentials: true })
@@ -35,7 +38,7 @@ const Dashboard = () => {
                     console.log(err);
                 })
         })
-    }, [])
+    }, [refresh])
 
     function logout() {
         console.log("Logout function");
@@ -53,16 +56,19 @@ const Dashboard = () => {
                 <NavBar setnavSelect={setnavSelect} />
                 <div className="dashboard-content">
                     {navSelect == 0 && (
-                        <Home />
+                        <Home userDetails={userDetails} />
                     )}
                     {navSelect == 1 && (
-                        <MakePayment setSelectedUser={setSelectedUser} userBeif={userBeif} />
+                        <MakePayment setSelectedUser={setSelectedUser} setnavSelect={setnavSelect} userBeif={userBeif} />
                     )}
                     {navSelect == 2 && (
-                        <AddBenificiary />
+                        <AddBenificiary refresh={refresh} setrefresh={setrefresh} />
                     )}
                     {navSelect == 3 && (
                         <History />
+                    )}
+                    {navSelect == 4 && (
+                        <PayPortal selectedUser={selectedUser} />
                     )}
                 </div>
             </div>

@@ -1,8 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router";
 
-const AddBenificiary = () => {
+
+const AddBenificiary = ({ setrefresh, refresh }) => {
     const [accountNumber, setaccountNumber] = useState("");
+    const navigate = useNavigate();
 
     async function AddBenifi() {
         console.log("AddBenifi");
@@ -10,11 +14,9 @@ const AddBenificiary = () => {
             accountNumber: accountNumber
         }, { withCredentials: true }).then(result => {
             console.log(result);
-            if (result.status(200)) {
-                alert("Benificiary Added")
-            } else {
-                alert("Error ", result.data.message);
-            }
+            alert('Added Benificiary')
+            setrefresh(!refresh)
+
         }).catch(err => {
             console.log(err);
         })

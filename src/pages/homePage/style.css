@@ -201,3 +201,48 @@
     height: 35px;
     border-radius: 5px;
 }
+
+.Payment-Portal-box {
+    width: 95%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 10px;
+    border-color: black;
+}
+
+.Payment-Portal-body {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pay-portal-verify-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.pay-portal-verify-details p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    margin-right: 200px;
+}
+
+.pay-portal-verify-details input {
+    height: 35px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.send-button {
+    display: flex;
+    justify-content: center;
+}
+
+.send-button button {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+}
